@@ -12,10 +12,17 @@ This vim script tryes to help to show logic related to functionality managed by 
 
 ### State of the art
 
-By now, there is only a few functions about load completion command and follow function declaration. For simplicity it work for "git" completion, a large and powerful autocompletion. 
+By now, there is only a few functions about load completion command and follow function declaration.
+
+You can issue:
+
+    <Leader>sc git #to show complete definition of git
+    <Leader>scf maven-completion mvn show complete for maven knowing the file for completion is maven-completion
 
 ### Issues
 
 - Completions are loaded through `/usr/share/bash-completion/bash-completion` and friend scripts. Nowadays bash-completion becomes smarter to load only completions when it's needed. so `/usr/share/bash-completion/completions/<command>` must be loaded in some cases.
+- If you use local directories to load scripts (like ~/.bashrc.d) some commands never will be found
 - Using same buffer for show complete and functions ends with no history navigation.
 - Allow reload from script to test new functionality
+
